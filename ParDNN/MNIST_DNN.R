@@ -1,7 +1,5 @@
 # MNIST
 
-setwd("E:\\Patric\\Write-up Papers\\GTC2016\\data")
-
 # 1. source our function
 source("ParDNN.R")
 
