@@ -493,4 +493,3 @@ train.dnn.O2 <- function(x, y,
   return(model)
 }
 
-
