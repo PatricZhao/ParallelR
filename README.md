@@ -6,11 +6,11 @@ This Repository includes the source code from ParallelR blog in ParallelR.com.
 
     http://www.parallelr.com/r-deep-neural-network-from-scratch/
 
-    CODE: iris_dnn.R 
+    CODE: ParDNN/iris_dnn.R 
     
 2. R For Deep Learning (II): Achieve High-Performance DNN With Parallel Acceleration
     
     http://www.parallelr.com/r-dnn-parallel-acceleration/
 
-    CODE: ParDNN.R MINIST_DNN.R
+    CODE:  ParDNN/ ParDNN.R MINIST_DNN.R
     
