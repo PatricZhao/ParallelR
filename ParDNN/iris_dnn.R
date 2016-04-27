@@ -3,7 +3,6 @@
 # Classification by 2-layers DNN and tested by iris dataset
 # Author: Peng Zhao, patric.zhao@gmail.com
 
-
 # Prediction
 predict.dnn <- function(model, data = X.test) {
   # new data, transfer to matrix
