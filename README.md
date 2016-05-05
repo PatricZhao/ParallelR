@@ -23,4 +23,8 @@ This Repository includes the source code from ParallelR blog in ParallelR.com.
       
    http://www.parallelr.com/r-hpac-benchmark-analysis/
     
+*R – GPU Programming for All with ‘gpuR’
+   
+   http://www.parallelr.com/r-gpu-programming-for-all-with-gpur/
+   
     
