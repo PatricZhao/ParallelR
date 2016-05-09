@@ -15,6 +15,12 @@ This Repository includes the source code from ParallelR blog in ParallelR.com.
    http://www.parallelr.com/r-dnn-parallel-acceleration/
    
    CODE:  ParDNN/ ParDNN.R MINIST_DNN.R
+   
+   (III) R for deep learning (III): CUDA and MultiGPUs Acceleration
+   
+   http://www.parallelr.com/r-dnn-cuda-multigpu/
+   
+   CODE: ParDNN/ ParDNN.R cudaR.R cudaR.cu multiGPU.R
     
     
 *R Benchmark For High-Performance Analytics And Computing
