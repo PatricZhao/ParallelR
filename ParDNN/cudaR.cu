@@ -1,8 +1,6 @@
 /*   Copyright: GTC2016, Unblock Deep Neural Network Performance Limiter by CUDA.
- *   Auther: Patric Zhao, Nvidia,
+ *   Author: Peng Zhao, Nvidia, ParallelR.com
  */
-
-
 
 // CUDA headfile
 #include "cuda_runtime.h"
