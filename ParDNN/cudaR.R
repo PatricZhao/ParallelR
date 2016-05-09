@@ -1,4 +1,5 @@
 # ParallelR:  GTC2016, Unblock Performance limit in R by CUDA
+# Author: Peng Zhao
 
 # preload static object file
 dyn.load("cudaR.so")
