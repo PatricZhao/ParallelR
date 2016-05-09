@@ -1,7 +1,7 @@
-# ParallelR. multiGPU
+# ParallelR.com : CUDA and multiGPU
+# Author: Peng Zhao
 
 # HoGWILD
-
 # 1. source our function
 library(parallel)
 source("ParDNN.R")
@@ -19,7 +19,7 @@ test <- data.matrix(test)
 train[,1:(ncol(train)-1)] <- train[,1:(ncol(train)-1)]/255
 test[,1:(ncol(test)-1)]   <- test[,1:(ncol(test)-1)]/255
 
-
+# performance testing for different number of devices(CPU/GPU)
 for(i in c(8,6,4,2, 1)) {
 time.dnn <- system.time(
 para.model <- train.dnn.para(x=1:784,
