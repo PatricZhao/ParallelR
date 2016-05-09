@@ -8,19 +8,19 @@ This Repository includes the source code from ParallelR blog in ParallelR.com.
 
    http://www.parallelr.com/r-deep-neural-network-from-scratch/
 
-   CODE: ParDNN/iris_dnn.R 
+   CODE: ParDNN {iris_dnn.R} 
     
    (II): Achieve High-Performance DNN With Parallel Acceleration
    
    http://www.parallelr.com/r-dnn-parallel-acceleration/
    
-   CODE:  ParDNN/ ParDNN.R MINIST_DNN.R
+   CODE:  ParDNN {ParDNN.R MINIST_DNN.R}
    
    (III): CUDA and MultiGPUs Acceleration
    
    http://www.parallelr.com/r-dnn-cuda-multigpu/
    
-   CODE: ParDNN/ ParDNN.R cudaR.R cudaR.cu multiGPU.R
+   CODE: ParDNN {ParDNN.R cudaR.R cudaR.cu MultiGPU.R}
     
     
 *R Benchmark For High-Performance Analytics And Computing
