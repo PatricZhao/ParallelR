@@ -1,0 +1,1 @@
+nvcc -O3 -arch=sm_35 -G -I/shared/apps/cuda/CUDA-v7.5.18/include -lcublas -I/home-2/patricz/tools/R-3.2.0/bin/lib64/R/include/ -L/home-2/patricz/tools/R/lib64/R/lib --shared -Xcompiler -fPIC -o cudaR.so cudaR.cu
