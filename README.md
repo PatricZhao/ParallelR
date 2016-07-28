@@ -2,7 +2,7 @@
 
 This Repository includes the source code from ParallelR blog in ParallelR.com.
 
-# R For Deep Learning 
+## R For Deep Learning 
 
    (I): Build Fully Connected Neural Network From Scratch
 
@@ -23,17 +23,17 @@ This Repository includes the source code from ParallelR blog in ParallelR.com.
    CODE: ParDNN {ParDNN.R cudaR.R cudaR.cu MultiGPU.R}
     
     
-# R Benchmark For High-Performance Analytics And Computing
+## R Benchmark For High-Performance Analytics And Computing
 
    (I) Intel Xeon Phi .vs. NVIDIA GPU 
       
    http://www.parallelr.com/r-hpac-benchmark-analysis/
     
-# R – GPU Programming for All with ‘gpuR’
+## R – GPU Programming for All with ‘gpuR’
    
    http://www.parallelr.com/r-gpu-programming-for-all-with-gpur/
    
-# R and openMP
+## R and OpenMP
    (I) Boosting Compiled Code on Multi-core CPUs
    
    http://www.parallelr.com/r-and-openmp-boosting-compiled-code-on-multi-core-cpu-s/
