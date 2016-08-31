@@ -97,3 +97,19 @@ system.time(
 
 stopImplicitCluster()
 stopCluster(cl)
+
+
+# BAD but direct implementation
+# Real physical cores in my computer
+# cores <- detectCores(logical=F)
+# cl <- makeCluster(cores)
+# registerDoParallel(cl, cores=cores)
+
+#system.time(
+#  res2.p <- foreach(i=1:len, .combine='rbind') %dopar%
+#  {  
+#      solve.quad.eq(a[i], b[i], c[i])
+#  }
+#)
+#stopImplicitCluster()
+#stopCluster(cl)
