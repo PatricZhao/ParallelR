@@ -46,7 +46,7 @@ system.time(
 
 
 # cluster on Windows
-cores <- detectCores()
+cores <- detectCores(logical = FALSE)
 cl <- makeCluster(cores)
 clusterExport(cl, c('solve.quad.eq', 'a', 'b', 'c'))
 system.time(
@@ -72,11 +72,8 @@ system.time(
 library(foreach)
 library(doParallel)
 
-# This will get the number cores including hyperthreading which are not very helpful for compute-intensive tasks
-# cores <- detectCores()
-
 # Real physical cores in my computer
-cores <- 2
+cores <- detectCores(logical = FALSE)
 cl <- makeCluster(cores)
 registerDoParallel(cl, cores=cores)
 
