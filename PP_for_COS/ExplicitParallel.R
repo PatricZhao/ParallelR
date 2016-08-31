@@ -2,7 +2,7 @@
 # Author: Peng Zhao, 8/30/2016
 
 # Toy case: solve quad equation  
-len <- 1e6
+len <- 1e8
 a <- runif(len, -10, 10)
 a[sample(len, 100,replace=TRUE)] <- 0
 
@@ -101,16 +101,36 @@ stopCluster(cl)
 
 # BAD but direct implementation
 # Real physical cores in my computer
- cores <- detectCores(logical=F)
- cl <- makeCluster(cores)
- registerDoParallel(cl, cores=cores)
+# cores <- detectCores(logical=F)
+# cl <- makeCluster(cores)
+# registerDoParallel(cl, cores=cores)
 
-system.time(
-  res2.p <- foreach(i=1:len, .combine='rbind') %dopar%
-  {  
-      #solve.quad.eq(a[i], b[i], c[i])
-      Sys.getpid()
-  }
-)
-stopImplicitCluster()
-stopCluster(cl)
+#system.time(
+#  res2.p <- foreach(i=1:len, .combine='rbind') %dopar%
+#  {  
+#      solve.quad.eq(a[i], b[i], c[i])
+#  }
+#)
+#stopImplicitCluster()
+#stopCluster(cl)
+
+
+###############################################################################
+# Results on Intel Xeon  (Linux System)
+###############################################################################
+> Rscript ExplicitParallel.R
+   user  system elapsed
+ 78.914   0.445  79.435
+   user  system elapsed
+ 21.644   1.485  23.153
+[1] TRUE
+   user  system elapsed
+  4.448   0.244  23.868
+[1] TRUE
+   user  system elapsed
+ 53.081   0.071  53.202
+Loading required package: iterators
+   user  system elapsed
+  1.460   0.168  15.327
+[1] TRUE
+
