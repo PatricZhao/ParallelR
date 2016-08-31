@@ -1,7 +1,7 @@
 # Examples for the R and Parallel Computing blog in COS website （cos.name)
 # Author: Peng Zhao, 8/30/2016
 
-# Toy case: solve quad equation  
+# Generate data    
 len <- 1e8
 a <- runif(len, -10, 10)
 a[sample(len, 100,replace=TRUE)] <- 0
@@ -12,7 +12,7 @@ c <- runif(len, -10, 10)
 # Not vectorized function
 solve.quad.eq <- function(a, b, c) 
 {
-  # Not validate eqution: a and c are almost ZERO
+  # Not validate eqution: a and b are almost ZERO
   if(abs(a) < 1e-8 && abs(b) < 1e-8) return(c(NA, NA) )
   
   # Not quad equation
@@ -34,7 +34,7 @@ solve.quad.eq <- function(a, b, c)
 ##############################################################################################
 # serial code
 system.time(
-    res1.s <- sapply(1:len, FUN = function(x) { solve.quad.eq(a[x], b[x], c[x])}, simplify = F)
+    res1.s <- lapply(1:len, FUN = function(x) { solve.quad.eq(a[x], b[x], c[x])})
 )
 
 # parallel
