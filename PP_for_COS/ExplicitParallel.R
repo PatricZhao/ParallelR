@@ -99,7 +99,7 @@ stopImplicitCluster()
 stopCluster(cl)
 
 
-# BAD but direct implementation
+# Direct implementation but in-efficiency
 # Real physical cores in my computer
 # cores <- detectCores(logical=F)
 # cl <- makeCluster(cores)
@@ -118,19 +118,19 @@ stopCluster(cl)
 ###############################################################################
 # Results on Intel Xeon  (Linux System)
 ###############################################################################
-> Rscript ExplicitParallel.R
-   user  system elapsed
- 78.914   0.445  79.435
-   user  system elapsed
- 21.644   1.485  23.153
-[1] TRUE
-   user  system elapsed
-  4.448   0.244  23.868
-[1] TRUE
-   user  system elapsed
- 53.081   0.071  53.202
-Loading required package: iterators
-   user  system elapsed
-  1.460   0.168  15.327
-[1] TRUE
+#> Rscript ExplicitParallel.R
+#   user  system elapsed
+# 78.914   0.445  79.435
+#   user  system elapsed
+# 21.644   1.485  23.153
+#[1] TRUE
+#   user  system elapsed
+#  4.448   0.244  23.868
+#[1] TRUE
+#   user  system elapsed
+# 53.081   0.071  53.202
+#Loading required package: iterators
+#   user  system elapsed
+#  1.460   0.168  15.327
+#[1] TRUE
 
