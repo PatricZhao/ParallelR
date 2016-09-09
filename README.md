@@ -37,3 +37,7 @@ This Repository includes the source code from ParallelR blog in ParallelR.com.
    (I) Boosting Compiled Code on Multi-core CPUs
    
    http://www.parallelr.com/r-and-openmp-boosting-compiled-code-on-multi-core-cpu-s/
+   
+## R with Parallel Computing
+   [中文] http://cos.name/2016/09/r-and-parallel-computing/
+   CODE: PP_for_COS
