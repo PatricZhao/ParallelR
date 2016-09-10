@@ -40,5 +40,6 @@ This Repository includes the source code from ParallelR blog in ParallelR.com.
    
 ## R with Parallel Computing
    [中文] http://cos.name/2016/09/r-and-parallel-computing/
+   [English] http://www.parallelr.com/r-with-parallel-computing/
    
    CODE: PP_for_COS
