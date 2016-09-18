@@ -15,6 +15,7 @@ library(deepnet)
 # download MNIST dataset in below links
 # https://h2o-public-test-data.s3.amazonaws.com/bigdata/laptop/mnist/train.csv.gz
 # https://h2o-public-test-data.s3.amazonaws.com/bigdata/laptop/mnist/test.csv.gz
+# OR: http://www.parallelr.com/materials/3_ParDNN/
 mnist.train <- as.matrix(fread("./train.csv", header=F))
 mnist.test  <- as.matrix(fread("./test.csv", header=F))
 
