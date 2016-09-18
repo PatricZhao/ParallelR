@@ -8,10 +8,14 @@
 library(data.table)
 library(deepnet)
 
-# V785 is the label
+
+# download MNIST dataset in below links
+# https://h2o-public-test-data.s3.amazonaws.com/bigdata/laptop/mnist/train.csv.gz
+# https://h2o-public-test-data.s3.amazonaws.com/bigdata/laptop/mnist/test.csv.gz
 mnist.train <- as.matrix(fread("./train.csv", header=F))
 mnist.test  <- as.matrix(fread("./test.csv", header=F))
 
+# V785 is the label
 x <- mnist.train[, 1:784]/255
 y <- model.matrix(~as.factor(mnist.train[, 785])-1)
 
@@ -21,3 +25,6 @@ nn <- dbn.dnn.train(x,y,
                     output="softmax",
                     batchsize=128, numepochs=100, learningrate = 0.1)
 )
+
+
+
