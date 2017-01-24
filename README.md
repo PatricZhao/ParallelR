@@ -44,3 +44,6 @@ This Repository includes the source code from ParallelR blog in ParallelR.com.
    [English] http://www.parallelr.com/r-with-parallel-computing/
    
    CODE: PP_for_COS
+ 
+## Parallel Computation with R and xgboost
+   http://www.parallelr.com/parallel-computation-with-r-and-xgboost/
