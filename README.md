@@ -28,6 +28,10 @@ This Repository includes the source code from ParallelR blog in ParallelR.com.
    (I) Intel Xeon Phi .vs. NVIDIA GPU 
       
    http://www.parallelr.com/r-hpac-benchmark-analysis/
+   
+   (II) Comparision for different GPU Packages (nvBLAS, gputools, gpuR, gmatrix)
+   
+   http://www.parallelr.com/r-hpac-benchmark-analysis-gpu/
     
 ## R – GPU Programming for All with ‘gpuR’
    
