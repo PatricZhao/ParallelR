@@ -8,7 +8,7 @@ This Repository includes the source code from ParallelR blog in ParallelR.com.
 
    http://www.parallelr.com/r-deep-neural-network-from-scratch/
 
-   CODE: ParDNN {iris_dnn.R} 
+   CODE: ParDNN {iris_dnn.R, Multi_DNN.R} 
     
    (II): Achieve High-Performance DNN With Parallel Acceleration
    
