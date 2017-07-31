@@ -2,7 +2,8 @@
 # Parallel Blog : R For Deep Learning (I): Build Fully Connected Neural Network From Scratch
 # Regression by 2-layers DNN and tested by iris dataset
 # Description: Build 2-layers DNN to predict Petal.Width according to the other three variables in iris dataset.
-# Author: Peng Zhao, patric.zhao@gmail.com
+# Author: Matrix Chen, xinyulux@gmail.com
+# Modified on the basis of the original written by Peng Zhao.
 
 # sigmoid
 sigmoid <- function(z) {
@@ -19,9 +20,8 @@ predict.dnn <- function(model, data = X.test) {
   hidden.layer <- sweep(new.data %*% model$W1 ,2, model$b1, '+')
   hidden.layer <- sigmoid(hidden.layer)
   score <- sweep(hidden.layer %*% model$W2, 2, model$b2, '+')
-  Petal.Width.predicted <- score
   
-  return(Petal.Width.predicted)
+  return(score)
 }
 
 # Train: build and train a 2-layers neural network 
