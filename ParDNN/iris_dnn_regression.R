@@ -1,7 +1,6 @@
 # Copyright 2016: www.ParallelR.com
 # Parallel Blog : R For Deep Learning (I): Build Fully Connected Neural Network From Scratch
 # Regression by 2-layers DNN and tested by iris dataset
-# Description: Build 2-layers DNN to predict Petal.Width according to the other three variables in iris dataset.
 # Author: Peng Zhao, patric.zhao@gmail.com
 
 # sigmoid
@@ -96,11 +95,10 @@ train.dnn <- function(x, y, traindata=data, testdata=NULL,
     # neurons : sigmoid
     hidden.layer <- sigmoid(hidden.layer)
     score <- sweep(hidden.layer %*% W2, 2, b2, '+')
-    Petal.Width <- score
     
     # compute the loss
-    dif <- Petal.Width - Y
-    data.loss <- (t(dif) %*% dif) / (2 * N)
+    diff <- score - Y
+    data.loss <- (t(diff) %*% diff) / (2 * N)
     reg.loss   <- 0.5*reg* (sum(W1*W1) + sum(W2*W2))
     loss <- data.loss + reg.loss
     
@@ -115,9 +113,9 @@ train.dnn <- function(x, y, traindata=data, testdata=NULL,
                        b1 = b1, 
                        W2 = W2, 
                        b2 = b2)
-        Petal.Width <- predict.dnn(model, testdata[,-y])
-        dif <- Petal.Width - testdata[,y]
-        mse <- (t(dif) %*% dif) / (2 * N)
+        Petal.Width.dnn <- predict.dnn(model, testdata[,-y])
+        diff <- Petal.Width.dnn - testdata[,y]
+        mse <- (t(diff) %*% diff) / (2 * N)
         cat(i, loss, mse, "\n")
       } else {
         cat(i, loss, "\n")
@@ -125,7 +123,7 @@ train.dnn <- function(x, y, traindata=data, testdata=NULL,
     }
     
     # backward ....
-    dscores <- Petal.Width - Y
+    dscores <- score - Y
     dscores <- dscores / batchsize
     
     dW2 <- t(hidden.layer) %*% dscores 
@@ -192,53 +190,53 @@ Petal.Width.dnn <- predict.dnn(Petal.Width.model, data[-samp, -4])
 #mse
 test <- data[-samp,]
 m <- length(test[,4])
-dif <- Petal.Width.dnn - test[,4]
-mse <- (t(dif) %*% dif) / (2 * m)
-mse #0.02664111
+diff <- Petal.Width.dnn - test[,4]
+mse <- (t(diff) %*% diff) / (2 * m)
+mse #0.02665006
 
 # Visualization
 # the output from screen, copy and paste here.
 data1 <- ("i loss mse
-          50 0.1815593 0.1955971 
-100 0.1543977 0.1645302 
-          150 0.1359293 0.1447406 
-          200 0.1193753 0.1273414 
-          250 0.1043159 0.1116563 
-          300 0.09069428 0.09754797 
-          350 0.07858586 0.08504139 
-          400 0.06807212 0.07418793 
-          450 0.05917428 0.0649938 
-          500 0.05183076 0.05739113 
-          550 0.04590674 0.05124195 
-          600 0.04122019 0.04636106 
-          650 0.03757053 0.04254354 
-          700 0.03476154 0.03958798 
-          750 0.03261592 0.03731178 
-          800 0.03098245 0.03555882 
-          850 0.02973758 0.03420151 
-          900 0.02878368 0.03313912 
-          950 0.02804566 0.03229441 
-          1000 0.02746694 0.03160948 
-          1050 0.02700568 0.03104186 
-          1100 0.02663133 0.03056087 
-          1150 0.02632181 0.03014469 
-          1200 0.02606127 0.02977792 
-          1250 0.02583831 0.02944974 
-          1300 0.02564474 0.02915253 
-          1350 0.02547455 0.02888083 
-          1400 0.02532334 0.02863066 
-          1450 0.02518775 0.02839903 
-          1500 0.02506522 0.0281836 
-          1550 0.02495374 0.02798249 
-          1600 0.02485169 0.02779412 
-          1650 0.02475776 0.02761717 
-          1700 0.02467087 0.02745047 
-          1750 0.02459011 0.02729302 
-          1800 0.02451474 0.02714392 
-          1850 0.02444412 0.02700239 
-          1900 0.02437769 0.02686773 
-          1950 0.024315 0.02673932 
-          2000 0.02425565 0.0266166 ")
+        50 0.1815593 0.1955971 
+100 0.1544014 0.1645331 
+          150 0.1359382 0.1447487 
+          200 0.1193891 0.1273547 
+          250 0.1043342 0.1116742 
+          300 0.09071633 0.09756991 
+          350 0.07861059 0.08506636 
+          400 0.06809837 0.07421481 
+          450 0.05920095 0.06502153 
+          500 0.05185695 0.05741881 
+          550 0.04593181 0.05126896 
+          600 0.04124379 0.04638704 
+          650 0.03759254 0.0425684 
+          700 0.034782 0.03961181 
+          750 0.032635 0.03733479 
+          800 0.03100038 0.0355813 
+          850 0.02975462 0.03422377 
+          900 0.02880007 0.03316147 
+          950 0.02806161 0.03231709 
+          1000 0.02748264 0.03163272 
+          1050 0.02702125 0.03106581 
+          1100 0.02664687 0.03058564 
+          1150 0.02633737 0.03017033 
+          1200 0.02607689 0.02980444 
+          1250 0.025854 0.02947713 
+          1300 0.02566047 0.02918074 
+          1350 0.02549033 0.02890983 
+          1400 0.02533914 0.02866039 
+          1450 0.02520355 0.02842944 
+          1500 0.02508101 0.02821464 
+          1550 0.0249695 0.02801411 
+          1600 0.0248674 0.02782629 
+          1650 0.02477342 0.02764986 
+          1700 0.02468646 0.02748365 
+          1750 0.02460564 0.02732667 
+          1800 0.0245302 0.02717803 
+          1850 0.0244595 0.02703695 
+          1900 0.02439301 0.02690273 
+          1950 0.02433024 0.02677474 
+          2000 0.02427081 0.02665246 ")
 
 data.v <- read.table(text=data1, header=T)
 par(mar=c(5.1, 4.1, 4.1, 4.1))
