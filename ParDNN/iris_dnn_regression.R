@@ -1,6 +1,7 @@
 # Copyright 2016: www.ParallelR.com
 # Parallel Blog : R For Deep Learning (I): Build Fully Connected Neural Network From Scratch
 # Regression by 2-layers DNN and tested by iris dataset
+# Description: Build 2-layers DNN to predict Petal.Width according to the other three variables in iris dataset.
 # Author: Peng Zhao, patric.zhao@gmail.com
 
 # sigmoid
